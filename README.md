@@ -69,7 +69,6 @@ fprintf('Accuracy init: %0.3f align: %0.3f improve: %0.3f\n',...
                   STTinitacc,STTalignacc,STTimprovacc)
 ```
 Output for 5-class Cuprite Hyp11->Av97 problem, Nkeep=25, Nrand=500, Npool=300 (baseline accuracy 0.9375):
-```matlab
 Per class RMSD:
 init (0.370): 0.252 0.287 0.500 0.371 0.441 
 align (0.370): 0.252 0.287 0.500 0.371 0.441 
@@ -96,7 +95,9 @@ code:
 Much of the early development of the MARTIAL algorithm is based on the RelTrans (RELational class knowledge TRANSfer) algorithm, detailed in the following publications:
 
 > B. D. Bue and D. R. Thompson, “Multiclass Continuous Correspondence Learning,” NIPS Domain Adaptation Workshop, Dec. 2011.
+
 > B. D. Bue, E. Merényi, and B. Csathó, “An Evaluation of Class Knowledge Transfer from Real to Synthetic Imagery,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2011.
+
 > B. D. Bue and E. Merényi, “Using spatial correspondences for hyperspectral knowledge transfer: evaluation on synthetic data,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2010.
 
 ## Changelog 
