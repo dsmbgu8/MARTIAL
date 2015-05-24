@@ -8,9 +8,6 @@ This code provides an implementation of the MAnifold Reconciliation Through Iter
 
 Tested using Matlab 7.14.0.739 (R2012a) on a Macbook Pro running OSX 10.6.
 
-## Disclaimer 
-
-Although this code has been reasonably well-tested, it is research code, and may contain bugs. Please refer to the FAQ below for info on commonly-occurring issues, and feel free to contact the author (bbue@alumni.rice.edu) if you have any difficulties using the code. 
 
 ## Installation 
 
@@ -103,6 +100,8 @@ Much of the early development of the MARTIAL algorithm is based on the RelTrans 
 Please contact the author (bbue@alumni.rice.edu) if you have any questions
 regarding this code.
 
-## Copyright 
 
-All code described above with the exception of the external libraries copyright 2012-2013 Rice University.
+## Disclaimer 
+
+Although this code has been reasonably well-tested, it is research code, and may contain bugs. Please refer to the FAQ below for info on commonly-occurring issues, and feel free to contact the author (bbue@alumni.rice.edu) if you have any difficulties using the code. 
+
