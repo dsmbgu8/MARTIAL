@@ -69,6 +69,8 @@ fprintf('Accuracy init: %0.3f align: %0.3f improve: %0.3f\n',...
                   STTinitacc,STTalignacc,STTimprovacc)
 ```
 Output for 5-class Cuprite Hyp11->Av97 problem, Nkeep=25, Nrand=500, Npool=300 (baseline accuracy 0.9375):
+
+```matlab
 Per class RMSD:
 init (0.370): 0.252 0.287 0.500 0.371 0.441 
 align (0.370): 0.252 0.287 0.500 0.371 0.441 
