@@ -16,9 +16,9 @@ Tested using Matlab 7.14.0.739 (R2012a) on a Macbook Pro running OSX 10.6.
 
 2) Then run the following code to add the MARTIAL functions to your path:
 
-  >> MARTIAL_ROOT='/path/to/MARTIAL/';
-  >> addpath(genpath(MARTIAL_ROOT));
-  >> savepath; % optional
+  > MARTIAL_ROOT='/path/to/MARTIAL/';
+  > addpath(genpath(MARTIAL_ROOT));
+  > savepath; % optional
 
 ## External Libraries 
 
@@ -40,37 +40,37 @@ The MARTIAL algorithm uses the following external libraries (place them in MARTI
 
 The following code runs the MARTIAL algorithm to map labeled source domain data (S,SL) to the target domain represented by target test set (T,TL) using the unlabled source samples SU and target samples TU. Target labels TL for test set T only used in validation (and not for pivot selection).
 
-  >> martial_options = struct('Nrand',Nrand,'Npool',Npool,'verbose',verbose)
-  >> outparm = martial(S,SL,T,TL,SU,TU,Nkeep,martial_options);
+  > martial_options = struct('Nrand',Nrand,'Npool',Npool,'verbose',verbose)
+  > outparm = martial(S,SL,T,TL,SU,TU,Nkeep,martial_options);
 
 Examine per-class RMSD and number of pivots used in each alignment step
-  >> fprintf('Per class RMSD:\n')
-  >> fprintf('init (%0.3f): ',mean(outparm.PSXrmsdinit)); fprintf('%0.3f ',outparm.PSXrmsdinit); fprintf('\n'); 
-  >> fprintf('align (%0.3f): ',mean(outparm.PSXrmsdalign)); fprintf('%0.3f ',outparm.PSXrmsdalign); fprintf('\n'); 
-  >> fprintf('improve (%0.3f): ',mean(outparm.PSXrmsdimprov)); fprintf('%0.3f ',outparm.PSXrmsdimprov); fprintf('\n'); 
-  >> fprintf('Per class alignment:\n')
-  >> fprintf('align (%0.3f): ',mean(outparm.PSXnalign)); fprintf('%0.3f ',outparm.PSXnalign); fprintf('\n'); 
-  >> fprintf('improve (%0.3f): ',mean(outparm.PSXnimprove)); fprintf('%0.3f ',outparm.PSXnimprove); fprintf('\n'); 
+  > fprintf('Per class RMSD:\n')
+  > fprintf('init (%0.3f): ',mean(outparm.PSXrmsdinit)); fprintf('%0.3f ',outparm.PSXrmsdinit); fprintf('\n'); 
+  > fprintf('align (%0.3f): ',mean(outparm.PSXrmsdalign)); fprintf('%0.3f ',outparm.PSXrmsdalign); fprintf('\n'); 
+  > fprintf('improve (%0.3f): ',mean(outparm.PSXrmsdimprov)); fprintf('%0.3f ',outparm.PSXrmsdimprov); fprintf('\n'); 
+  > fprintf('Per class alignment:\n')
+  > fprintf('align (%0.3f): ',mean(outparm.PSXnalign)); fprintf('%0.3f ',outparm.PSXnalign); fprintf('\n'); 
+  > fprintf('improve (%0.3f): ',mean(outparm.PSXnimprove)); fprintf('%0.3f ',outparm.PSXnimprove); fprintf('\n'); 
 
 Evaluate cross-validated prediction accuracy using the target-transformed source data produced by each of the alignment steps using a classifier of your hoosing (xvalidate function not included in this code): 
-  >> STinit = outparm.SXinit; % source spectra after MARTIAL init step
-  >> STalign = outparm.SXalign; % source spectra after MARTIAL align step
-  >> STimprov = outparm.SXimprov;  % source spectra after MARTIAL improve ste
-  >> STinitacc = xvalidate(STinit,SL,T,TL,xvalparm);
-  >> STalignacc = xvalidate(STalign,SL,T,TL,xvalparm);
-  >> STimprovacc = xvalidate(STimprov,SL,T,TL,xvalparm);  
-  >> fprintf('Accuracy init: %0.3f align: %0.3f improve: %0.3f\n',...
+  > STinit = outparm.SXinit; % source spectra after MARTIAL init step
+  > STalign = outparm.SXalign; % source spectra after MARTIAL align step
+  > STimprov = outparm.SXimprov;  % source spectra after MARTIAL improve ste
+  > STinitacc = xvalidate(STinit,SL,T,TL,xvalparm);
+  > STalignacc = xvalidate(STalign,SL,T,TL,xvalparm);
+  > STimprovacc = xvalidate(STimprov,SL,T,TL,xvalparm);  
+  > fprintf('Accuracy init: %0.3f align: %0.3f improve: %0.3f\n',...
                   STTinitacc,STTalignacc,STTimprovacc)
 
 Output for 5-class Cuprite Hyp11->Av97 problem, Nkeep=25, Nrand=500, Npool=300 (baseline accuracy 0.9375): 
-  Per class RMSD:
-  init (0.370): 0.252 0.287 0.500 0.371 0.441 
-  align (0.370): 0.252 0.287 0.500 0.371 0.441 
-  improve (0.593): 0.494 0.529 0.690 0.589 0.663 
-  Per class alignment:
-  align (25.000): 25.000 25.000 25.000 25.000 25.000 
-  improve (25.000): 25.000 25.000 25.000 25.000 25.000 
-  Accuracy init: 0.976 align: 0.976 improve: 0.977
+> Per class RMSD:
+> init (0.370): 0.252 0.287 0.500 0.371 0.441 
+> align (0.370): 0.252 0.287 0.500 0.371 0.441 
+> improve (0.593): 0.494 0.529 0.690 0.589 0.663 
+> Per class alignment:
+> align (25.000): 25.000 25.000 25.000 25.000 25.000 
+> improve (25.000): 25.000 25.000 25.000 25.000 25.000 
+> Accuracy init: 0.976 align: 0.976 improve: 0.977
 
 ## FAQ 
 
@@ -81,15 +81,15 @@ Please refer to the FAQ provided in the RelTrans README (included in the RelTran
 Please cite the following publications if you publish any works using this
 code:
 
-  B. D. Bue and C. Jermaine. "Multiclass Domain Adaptation with Iterative Manifold Alignment."Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), June 2013.
+> B. D. Bue and C. Jermaine. "Multiclass Domain Adaptation with Iterative Manifold Alignment."Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), June 2013.
 
 ## Additional References 
 
 Much of the early development of the MARTIAL algorithm is based on the RelTrans (RELational class knowledge TRANSfer) algorithm, detailed in the following publications:
 
-  B. D. Bue and D. R. Thompson, “Multiclass Continuous Correspondence Learning,” NIPS Domain Adaptation Workshop, Dec. 2011.
-  B. D. Bue, E. Merényi, and B. Csathó, “An Evaluation of Class Knowledge Transfer from Real to Synthetic Imagery,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2011.
-  B. D. Bue and E. Merényi, “Using spatial correspondences for hyperspectral knowledge transfer: evaluation on synthetic data,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2010.
+> B. D. Bue and D. R. Thompson, “Multiclass Continuous Correspondence Learning,” NIPS Domain Adaptation Workshop, Dec. 2011.
+> B. D. Bue, E. Merényi, and B. Csathó, “An Evaluation of Class Knowledge Transfer from Real to Synthetic Imagery,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2011.
+> B. D. Bue and E. Merényi, “Using spatial correspondences for hyperspectral knowledge transfer: evaluation on synthetic data,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2010.
 
 ## Changelog 
 
