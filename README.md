@@ -1,18 +1,18 @@
-MARTIAL: MAnifold Reconciliation Through Iterative ALignment algorithm
+# MARTIAL: MAnifold Reconciliation Through Iterative ALignment algorithm
 
------ Algorithm summary -----
+## Algorithm summary 
 
 This code provides an implementation of the MAnifold Reconciliation Through Iterative ALignment (MARTIAL) algorithm for multiclass domain adaptation.  
 
------ System Requirements -----
+## System Requirements 
 
 Tested using Matlab 7.14.0.739 (R2012a) on a Macbook Pro running OSX 10.6.
 
------ Disclaimer -----
+## Disclaimer 
 
 Although this code has been reasonably well-tested, it is research code, and may contain bugs. Please refer to the FAQ below for info on commonly-occurring issues, and feel free to contact the author (bbue@alumni.rice.edu) if you have any difficulties using the code. 
 
------ Installation -----
+## Installation 
 
 1) First install the RelTrans framework, available at the following url:
    http://www.ece.rice.edu/~bdb1/#reltrans
@@ -23,9 +23,9 @@ Although this code has been reasonably well-tested, it is research code, and may
   >> addpath(genpath(MARTIAL_ROOT));
   >> savepath; % optional
 
------ External Libraries -----
+## External Libraries 
 
-The MARTIAL algorithm uses the following external libraries (provided in MARTIAL_ROOT/external):
+The MARTIAL algorithm uses the following external libraries (place them in MARTIAL_ROOT/external):
 
 1) Kabsch: Kabsch algorithm for computing the minimum Root Mean Square Deviation (RMSD) transformation between two point sets of equal cardinality and dimensionality.
   - Credit: Ehud Schreiber (schreib@compugen.co.il), 2012
@@ -36,10 +36,10 @@ The MARTIAL algorithm uses the following external libraries (provided in MARTIAL
 
 2) munkres: Hungarian algorithm for solving linear assignment problems. 
   - Credit: Yi Cao (y.cao@cranfield.ac.uk), 2008
-  - Original implementation: http://www.mathworks.com/matlabcentral/fileexchange/20652-hungarian-algorithm-for-linear-assignment-problems-v2-3)
+  - Original implementation: http://www.mathworks.com/matlabcentral/fileexchange/20652-hungarian-algorithm-for-linear-assignment-problems-v2-3
 
 
------ Example Usage and Output -----
+## Example Usage and Output 
 
 The following code runs the MARTIAL algorithm to map labeled source domain data (S,SL) to the target domain represented by target test set (T,TL) using the unlabled source samples SU and target samples TU. Target labels TL for test set T only used in validation (and not for pivot selection).
 
@@ -75,18 +75,18 @@ Output for 5-class Cuprite Hyp11->Av97 problem, Nkeep=25, Nrand=500, Npool=300 (
   improve (25.000): 25.000 25.000 25.000 25.000 25.000 
   Accuracy init: 0.976 align: 0.976 improve: 0.977
 
------ FAQ -----
+## FAQ 
 
 Please refer to the FAQ provided in the RelTrans README (included in the RelTrans package, and also available at: http://www.ece.rice.edu/~bdb1/code/README_RelTrans.txt) for the most up-to-date list of frequently asked questions. 
 
------ Citation -----
+## Citation 
 
 Please cite the following publications if you publish any works using this
 code:
 
   B. D. Bue and C. Jermaine. "Multiclass Domain Adaptation with Iterative Manifold Alignment."Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), June 2013.
 
------ Additional References -----
+## Additional References 
 
 Much of the early development of the MARTIAL algorithm is based on the RelTrans (RELational class knowledge TRANSfer) algorithm, detailed in the following publications:
 
@@ -94,15 +94,15 @@ Much of the early development of the MARTIAL algorithm is based on the RelTrans 
   B. D. Bue, E. Merényi, and B. Csathó, “An Evaluation of Class Knowledge Transfer from Real to Synthetic Imagery,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2011.
   B. D. Bue and E. Merényi, “Using spatial correspondences for hyperspectral knowledge transfer: evaluation on synthetic data,” Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Jun. 2010.
 
------ Changelog -----
+## Changelog 
 
 06/17/13 - initial release.
 
------ Contact -----
+## Contact 
 
 Please contact the author (bbue@alumni.rice.edu) if you have any questions
 regarding this code.
 
------ Copyright -----
+## Copyright 
 
 All code described above with the exception of the external libraries copyright 2012-2013 Rice University.
