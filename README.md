@@ -40,17 +40,18 @@ The MARTIAL algorithm uses the following external libraries (place them in MARTI
 
 The following code runs the MARTIAL algorithm to map labeled source domain data (S,SL) to the target domain represented by target test set (T,TL) using the unlabled source samples SU and target samples TU. Target labels TL for test set T only used in validation (and not for pivot selection).
 
+```matlab
   > martial_options = struct('Nrand',Nrand,'Npool',Npool,'verbose',verbose)
   > outparm = martial(S,SL,T,TL,SU,TU,Nkeep,martial_options);
-
+```
 Examine per-class RMSD and number of pivots used in each alignment step
-  > fprintf('Per class RMSD:\n')
-  > fprintf('init (%0.3f): ',mean(outparm.PSXrmsdinit)); fprintf('%0.3f ',outparm.PSXrmsdinit); fprintf('\n'); 
-  > fprintf('align (%0.3f): ',mean(outparm.PSXrmsdalign)); fprintf('%0.3f ',outparm.PSXrmsdalign); fprintf('\n'); 
-  > fprintf('improve (%0.3f): ',mean(outparm.PSXrmsdimprov)); fprintf('%0.3f ',outparm.PSXrmsdimprov); fprintf('\n'); 
-  > fprintf('Per class alignment:\n')
-  > fprintf('align (%0.3f): ',mean(outparm.PSXnalign)); fprintf('%0.3f ',outparm.PSXnalign); fprintf('\n'); 
-  > fprintf('improve (%0.3f): ',mean(outparm.PSXnimprove)); fprintf('%0.3f ',outparm.PSXnimprove); fprintf('\n'); 
+> fprintf('Per class RMSD:\n')
+> fprintf('init (%0.3f): ',mean(outparm.PSXrmsdinit)); fprintf('%0.3f ',outparm.PSXrmsdinit); fprintf('\n'); 
+> fprintf('align (%0.3f): ',mean(outparm.PSXrmsdalign)); fprintf('%0.3f ',outparm.PSXrmsdalign); fprintf('\n'); 
+> fprintf('improve (%0.3f): ',mean(outparm.PSXrmsdimprov)); fprintf('%0.3f ',outparm.PSXrmsdimprov); fprintf('\n'); 
+> fprintf('Per class alignment:\n')
+> fprintf('align (%0.3f): ',mean(outparm.PSXnalign)); fprintf('%0.3f ',outparm.PSXnalign); fprintf('\n'); 
+> fprintf('improve (%0.3f): ',mean(outparm.PSXnimprove)); fprintf('%0.3f ',outparm.PSXnimprove); fprintf('\n'); 
 
 Evaluate cross-validated prediction accuracy using the target-transformed source data produced by each of the alignment steps using a classifier of your hoosing (xvalidate function not included in this code): 
   > STinit = outparm.SXinit; % source spectra after MARTIAL init step
